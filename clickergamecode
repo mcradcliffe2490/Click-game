@@ -1,0 +1,125 @@
+
+//made in code.org
+setScreen("mainmenu");
+var soniclick = 0;
+var dbzclick = 0;
+var memeclick = 0;
+onEvent("sonic_start", "mouseover", function() {
+  setSize("sonic_start", 165, 10);
+});
+onEvent("sonic_start", "mouseout", function() {
+  setSize("sonic_start", 185, 20);
+});
+onEvent("sonic_start", "click", function() {
+  playSound("Sonic Adventure 2 City Escape Music request (mp3cut.net).mp3");
+  setScreen("soniclicker");
+  console.log("sonic start clicked");
+  setTimeout(function() {
+    setScreen("sonic_clicker_endgame");
+    setText("sonic_score", ("Congrats! you clicked " + soniclick) + " times.");
+    setText("click_per_second_sonic", ("You clicked " + soniclick / 20) + " times per second");
+  }, 20000);
+});
+onEvent("chaos_emerald", "click", function() {
+  soniclick = soniclick + 1;
+});
+onEvent("chaos_emerald", "mousedown", function() {
+  setSize("chaos_emerald", 190, 166);
+});
+onEvent("chaos_emerald", "mouseup", function() {
+  setSize("chaos_emerald", 210, 166);
+});
+onEvent("main_menu_sonic", "mouseover", function() {
+  setSize("main_menu_sonic", 158, 23);
+});
+onEvent("main_menu_sonic", "mouseout", function() {
+  setSize("main_menu_sonic", 168, 33);
+});
+onEvent("main_menu_sonic", "click", function() {
+  stopSound("Sonic Adventure 2 City Escape Music request (mp3cut.net).mp3");
+  soniclick = 0;
+  setScreen("mainmenu");
+  setSize("main_menu_sonic", 168, 23);
+  setSize("chaos_emerald", 210, 186);
+});
+//start of dbz code
+onEvent("dbz_start", "mouseover", function() {
+  setSize("dbz_start", 175, 18);
+});
+onEvent("dbz_start", "mouseout", function() {
+  setSize("dbz_start", 185, 28);
+});
+onEvent("dbz_start", "click", function() {
+  playSound("Dragon Ball Super OST The Birth of a God [SSJ God and rose Theme] (mp3cut.net).mp3", false);
+  setScreen("dragonball_clicker");
+  console.log("dbz start clicked");
+  setTimeout(function() {
+    setScreen("dragonball_clicker_endgame");
+    setText("dbz_score", ("Congragulations, you clicked " + dbzclick) + " times");
+    setText("clicks_per_second_dbz", (" You clicked " + dbzclick / 12) + " times per second");
+  }, 12000);
+});
+onEvent("4star_ball", "click", function() {
+  dbzclick = dbzclick + 1;
+});
+onEvent("4star_ball", "mousedown", function() {
+  setSize("4star_ball", 142, 141);
+});
+onEvent("4star_ball", "mouseup", function() {
+  setSize("4star_ball", 162, 161);
+});
+onEvent("dbz_main_menu", "mouseover", function() {
+  setSize("dbz_main_menu", 120, 12);
+});
+onEvent("dbz_main_menu", "mouseout", function() {
+  setSize("dbz_main_menu", 130, 22);
+});
+onEvent("dbz_main_menu", "click", function() {
+  stopSound("Dragon Ball Super OST The Birth of a God [SSJ God and rose Theme] (mp3cut.net).mp3");
+  dbzclick = 0;
+  setScreen("mainmenu");
+  setSize("4star_ball", 162, 161);
+  setSize("dbz_main_menu", 130, 22);
+});
+//start of meme code
+onEvent("meme_start", "mouseover", function() {
+  setSize("meme_start", 150, 22);
+});
+onEvent("meme_start", "mouseout", function() {
+  setSize("meme_start", 160, 32);
+});
+onEvent("meme_start", "click", function() {
+  playSound("Bag Raiders - Shooting Stars (mp3cut.net).mp3");
+  setScreen("meme_clicker");
+  console.log("meme start clicked");
+  setTimeout(function() {
+    setScreen("meme_clicker_endgame");
+    setText("meme_score", ("Congragulations, you clicked " + memeclick) + " times");
+    setText("clicks_per_second_meme", ("You clicked " + memeclick / 7) + " times per second");
+  }, 7000);
+});
+onEvent("me_gusta", "click", function() {
+  memeclick = memeclick + 1;
+});
+onEvent("me_gusta", "mousedown", function() {
+  setSize("me_gusta", 82, 79);
+});
+onEvent("me_gusta", "mouseup", function() {
+  setSize("me_gusta", 102, 99);
+});
+onEvent("meme_main_menu", "mouseover", function() {
+  setSize("meme_main_menu", 117, 24);
+});
+onEvent("meme_main_menu", "mouseout", function() {
+  setSize("meme_main_menu", 127, 34);
+});
+onEvent("meme_main_menu", "click", function() {
+  stopSound("Bag Raiders - Shooting Stars (mp3cut.net).mp3");
+  memeclick = 0;
+  setScreen("mainmenu");
+  setSize("me_gusta", 102, 99);
+  setSize("meme_main_menu", 127, 34);
+});
+//Shooting stars song URL: https://www.youtube.com/watch?v=feA64wXhbjo 
+//Dragon ball super song "The Birth of a god" URL: https://www.youtube.com/watch?v=EcpGNg8Zoo0
+//Sonic Adventure 2 City Escape song URL: https://www.youtube.com/watch?v=Z6NaZrPQGfY
